@@ -1,0 +1,12 @@
+name: Check tracks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: python3 tools/check_tracks.py --out tracks.json
